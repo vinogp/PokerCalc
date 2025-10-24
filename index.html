@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Покерный калькулятор</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <h1>Калькулятор шансов выигрыша в покере</h1>
+
+    <script src="./src/main.js" type="module"></script>
+
+    <div class="container">
+        <div class="input-section">
+            <div class="player-cards">
+                Ваши карты:
+                <input type="text" id="player-card1" maxlength="3" size="4" />
+                <input type="text" id="player-card2" maxlength="3" size="4" />
+            </div>
+            <div class="board-cards">
+                <label for="board-cards">Карты на столе (через запятую):</label>
+                <input type="text" id="board-cards" />
+            </div>
+            <div class="num-players">
+                <label for="num-players">Количество игроков (не считая вас):</label>
+                <input type="number" id="num-players" min="2" max="15" />
+            </div>
+            <button type="button" onclick="main()">Рассчитать</button>
+        </div>
+
+        <div class="results-section">
+            <h3>Результаты:</h3>
+            <div class="result-item">
+                <span class="result-label">Шанс выигрыша: </span>
+                <span class="result-value" id="win-value"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Шанс ничьи: </span>
+                <span class="result-value" id="tie-value"></span>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="card-format">
+                <h3>📝 Формат ввода карт:</h3>
+                <p><strong>Достоинства:</strong> 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K, A</p>
+                <p><strong>Масти:</strong> h (♥), d (♦), c (♣), s (♠)</p>
+                <p><strong>Примеры:</strong> Ah (Туз ♥), Ks (Король ♠), Td (Десятка ♦), Q♣ (Дама ♣)</p>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,149 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.input-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.player-cards, .board-cards, .num-players {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+    input[type="text"]:focus, input[type="number"]:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+#player-card1, #player-card2 {
+    width: 80px;
+    margin-right: 10px;
+}
+
+#board-cards {
+    width: 300px;
+}
+
+#num-players {
+    width: 100px;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    button:hover {
+        background: #219a52;
+    }
+
+.results-section {
+    background: #e8f5e8;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #27ae60;
+    margin-bottom: 20px;
+}
+
+    .results-section h3 {
+        color: #27ae60;
+        margin-bottom: 15px;
+    }
+
+.result-item {
+    margin: 10px 0;
+    padding: 8px;
+    background: white;
+    border-radius: 5px;
+}
+
+.result-label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.result-value {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.info-section {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #2196f3;
+}
+
+.card-format h3 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.card-format p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    #board-cards {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
