@@ -163,7 +163,7 @@
     }
 
     // Бенчмарк функции
-    benchmark(name, fn, iterations = 1000) {
+    benchmark(name, fn, iterations = 1000, is_showing = true) {
         const { time } = this.measureTime(() => {
             for (let i = 0; i < iterations; i++) {
                 fn();
@@ -172,18 +172,21 @@
 
         const avgTime = time / iterations;
 
-        const benchDiv = document.createElement('div');
-        benchDiv.className = 'performance';
-        benchDiv.innerHTML = `
-                    📊 <strong>${name}</strong><br>
-                    Iterations: ${iterations}<br>
-                    Total time: ${time.toFixed(2)}ms<br>
-                    Average time: ${avgTime.toFixed(4)}ms<br>
-                    Operations per second: ${(1000 / avgTime).toFixed(0)}
-                `;
+        if (is_showing) {
+            const benchDiv = document.createElement('div');
+            benchDiv.className = 'performance';
+            benchDiv.innerHTML = `
+                        📊 <strong>${name}</strong><br>
+                        Iterations: ${iterations}<br>
+                        Total time: ${time.toFixed(2)}ms<br>
+                        Average time: ${avgTime.toFixed(4)}ms<br>
+                        Operations per second: ${(1000 / avgTime).toFixed(0)}
+                    `;
 
-        this.resultsContainer.appendChild(benchDiv);
-        console.log(`📊 ${name}: ${avgTime.toFixed(4)}ms per operation`);
+            this.resultsContainer.appendChild(benchDiv);
+            console.log(`📊 ${name}: ${avgTime.toFixed(4)}ms per operation`);
+        }
+        return avgTime;
     }
 }
 

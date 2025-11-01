@@ -28,6 +28,22 @@ tester.test('is_straight', () => {
     tester.assertEquals(is_straight(hand), { flag: false });
 })
 
+tester.benchmark('is_flush', () => is_flush([
+    new Card('A', 'h'),
+    new Card('5', 'h'),
+    new Card('9', 'h'),
+    new Card('T', 'h'),
+    new Card('Q', 'h')
+]), 1e8);
+
+tester.benchmark('is_straight', () => is_straight([
+    new Card('7', 'h'),
+    new Card('J', 'h'),
+    new Card('9', 'h'),
+    new Card('T', 'h'),
+    new Card('8', 'h')
+]), 1e7);
+
 tester.test('evaluate_5_cards straight-flush', () => {
     test_eval_5('Th, Jh, Qh, Kh, Ah', 8_00_00_00_00_12);
     test_eval_5('9h, Th, Jh, Qh, Kh', 8_00_00_00_00_11);

@@ -40,6 +40,10 @@
     static neq(card1, card2) {
         return !Card.eq(card1, card2);
     }
+
+    static from_data(data) {
+        return new Card(data.rank, data.suit);
+    }
 }
 
 /**
